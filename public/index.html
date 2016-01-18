@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+
+<html ng-app="app">
+<head>
+	<title>Crud</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ <script src="/js/angular-resource.min.js"></script>
+<script src="js/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.3/ui-bootstrap.min.js"></script>
+
+
+</head>
+<body ng-controller="main">
+
+<div class="jumbotron text-center">
+<h1> Numero de usuarios <span class="label label-success">{{user.length}}</span></h1>
+</div>
+
+<div class="container">
+	<div class="row">
+	<div class="col-sm-6 col-sm-offset-1">
+	<h2>Lista de Usuarios</h2>
+<table class="table table-striped">
+<thead>
+	<tr class="info">
+	<td>Nombre</td>
+	<td>Apellido</td>
+	<td>Nickname</td>
+
+</tr>
+</thead>
+<tbody>
+	<tr ng-repeat="us in user" ng-click="selectPerson(us)">
+		<td>{{us.nombre}}</td>
+		<td>{{us.apellido}}</td>
+		<td>{{us.username}}</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="col-sm-4 col-sm-offset-1">
+
+<form name="myForm">
+
+	<div class="form-group">
+
+	<input type="text" class="form-control input-lg" ng-model="formData.nombre" placeholder="Nombre" required>
+	<br>
+	<input type="text" class="form-control input-lg" ng-model="formData.apellido" placeholder="apellido" required>
+	<br>
+	<input type="text" class="form-control input-lg" ng-model="formData.username" placeholder="username" required>
+	<br>
+
+	</div>
+
+	<button type="submit"class="btn btn-success btn-lg" ng-click="Registrar()" ng-disabled="myForm.$invalid || selected">Registrar</button>
+    <button type="submit" class="btn btn-warning btn-lg" ng-click="Editar(formData)" ng-disabled="!formData.nombre || !formData.apellido || !formData.username || !selected">Editar</button>
+	<button type="submit" class="btn bt-danger btn-lg" ng-click="Eliminar(formData)" ng-disabled="!formData.nombre || !formData.apellido || !formData.username || !selected">Borrar</button>
+
+</form>
+
+
+  </div>
+  </div>
+
+</body>
+</html>

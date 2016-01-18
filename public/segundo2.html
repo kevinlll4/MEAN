@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+
+<html ng-app="app">
+<head>
+	<title>Crud</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ <script src="/js/angular-resource.min.js"></script>
+<script src="js/scrip.js"></script>
+
+</head>
+<body ng-controller="main">
+<form>
+
+      <label>Name:</label>
+      <input type="text" ng-model="nombre" placeholder="Enter a name here">
+      <hr>
+      <button ng-click="hola()">SUbi</button>
+ <h1>{{nombre}}</h1>
+ <h2></h2>
+</form>
+</body>
+</html>
